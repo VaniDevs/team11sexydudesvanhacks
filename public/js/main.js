@@ -34,12 +34,15 @@ var checkboxClick_handler = function(item) {
     var checkbox = $("#checkbox_" + item);
     var price = $("#price_" + item);
     var number = $("#number_" + item);
+    var aSearchButton = $("#amazonSearchButton_" + item);
     if (checkbox.prop('checked')) {
         price.css("visibility", "visible");
         number.css("visibility", "visible");
+        aSearchButton.css("visibility", "visible");
     } else {
         price.css("visibility", "hidden");
         number.css("visibility", "hidden");
+        aSearchButton.css("visibility", "hidden");
     }
 
     var amt = Number($("#number_" + item).val());
@@ -81,10 +84,6 @@ var totalAmtChange_handler = function() {
     totalAmt(rounded.toString());
 }
 
-var deleteItem = function(itemId) {
-  $.delete("/item/" + itemId);
-}
-
 $(document).ready(function() {
     $.get("/item/array", function(data, status) {
       //todo check status
@@ -92,9 +91,19 @@ $(document).ready(function() {
             dataItems.push(data[i]);
             $("#price_"+i).css("visibility", "hidden");
             $("#number_"+i).css("visibility", "hidden");
+            $("#amazonSearchButton_"+i).css("visibility", "hidden");
+            $("#amazonSearchButton_"+i).click(function() {
+                var index = $(this).attr('id').substring(19);
+                var title = $("#title_"+index).text();
+                var titleSlug = title.toLowerCase()
+                                     .replace(/ /g,'-')
+                                     .replace(/[^\w-]+/g,'');
+                alert("Thank you! Please fill in the shipping destination as: 34 12 AVE E, Vancouver, BC. Charitable Tax Receipts will be issued for eligible gifts of $25 or more. Thank you for your generous support.");
+                window.open("http://www.amazon.ca/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=" + titleSlug, '_blank');
+            });
         }
         $(".table tr").click(function(event) {
-            if (event.target.type !== 'checkbox' && event.target.type !== 'number') {
+            if (event.target.type !== 'checkbox' && event.target.type !== 'number' && event.target.type !== 'button') {
                 $(":checkbox", this).trigger('click');
             }
         });

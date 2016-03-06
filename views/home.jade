@@ -41,12 +41,14 @@ block content
                   tr
                     td
                       input.checkbox(type='checkbox', data-bind="value: $index(), attr: {'id': 'checkbox_' + $index()}, click: checkboxClick_handler($index())")
-                      span(data-bind='text: title')
+                      span(data-bind="attr: {'id': 'title_' + $index()}, text: title")
                     td(style='width: 15em; word-wrap: normal', data-bind='text: description')
                     td
                       span(data-bind="attr: {'id': 'price_'+ $index()}, text: '$' + price")
                     td
                       input(type='number', style='width: 4em; text-align: center', data-bind="attr: {'id': 'number_'+ $index()}", oninput='totalAmtChange_handler()', value='1')
+                    td  
+                      input(type='button', data-bind="attr: {'id': 'amazonSearchButton_' + $index()}", value: 'or Donate in kind')
             .modal-footer
               h3
                 form.form-horizontal(role='form', method='POST')

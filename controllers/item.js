@@ -27,7 +27,11 @@ exports.postItem = function (req, res, next) {
     if (err) {
       return "Something went wrong";
     }
-    res.status(204).end();
+    req.flash('success', {msg: 'Successfully posted an item'})
+    res.render('item', {
+      title: 'Create an item post',
+      saved: true
+    });
   });
 }
 

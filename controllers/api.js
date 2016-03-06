@@ -79,7 +79,7 @@ exports.getPayPal = function(req, res, next) {
     transactions: [{
       description: 'Big Sisters of BC',
       amount: {
-        currency: 'USD',
+        currency: 'CAD',
         total: '1.99'
       }
     }]

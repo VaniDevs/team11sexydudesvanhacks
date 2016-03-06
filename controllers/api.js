@@ -77,10 +77,10 @@ exports.getPayPal = function(req, res, next) {
       cancel_url: '/api/paypal/cancel'
     },
     transactions: [{
-      description: 'Big Sisters of BC',
+      description: 'Donation to Big Sisters of BC',
       amount: {
         currency: 'CAD',
-        total: '1.99'
+        total: req.body.totalAmt
       }
     }]
   };

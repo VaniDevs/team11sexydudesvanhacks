@@ -153,7 +153,7 @@ app.get('/test', function(req,res){
 app.get('/api', apiController.getApi);
 app.get('/api/stripe', apiController.getStripe);
 app.post('/api/stripe', apiController.postStripe);
-app.get('/api/paypal', apiController.getPayPal);
+app.post('/api/paypal', apiController.getPayPal);
 app.get('/api/paypal/success', apiController.getPayPalSuccess);
 app.get('/api/paypal/cancel', apiController.getPayPalCancel);
 app.get('/api/upload', apiController.getFileUpload);

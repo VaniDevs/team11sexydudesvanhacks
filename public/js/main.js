@@ -24,9 +24,8 @@ window.onclick = function(event) {
 }
 
 paypalBtn.onclick = function() {
-    $.get("/api/paypal", function(data) {
-        alert(data);
-    });
+
+    $.post("/api/paypal");
 }
 
 var dataItems = ko.observableArray();

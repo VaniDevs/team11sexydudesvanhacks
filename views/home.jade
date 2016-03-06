@@ -44,10 +44,12 @@ block content
                       input(type='number', style='width: 4em; text-align: center', data-bind="attr: {'id': 'number_'+ $index()}", oninput='totalAmtChange_handler()', value='1')
             .modal-footer
               h3
-                | Total Donation: $
-                span#totalAmount(data-bind='text: totalAmt')
-                button#paypalBtn.btn.btn-primary PayPal
-                button#visaBtn.btn.btn-success Visa
+                form.form-horizontal(role='form', method='POST')
+                  | Total Donation: $
+                  span#totalAmount(data-bind='text: totalAmt')
+                  input#hiddenTotalAmount(type="hidden" data-bind='value: totalAmt')
+                  button#paypalBtn.btn.btn-primary(type="submit") PayPal
+                  button#visaBtn.btn.btn-success(type="submit") Visa
     a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
       span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
       span.sr-only Next

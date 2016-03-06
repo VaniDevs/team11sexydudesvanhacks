@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.homepage-title {
+  font-size: 5em;
+  font-family: ubuntu;
+  font-weight: bold;
+}
+
+.lead {
+  font-size: 2.5em;
+  font-family: ubuntu;
+}
+
+.headshot-img {
+  max-width: 60px;
+  height: 60px;
+}

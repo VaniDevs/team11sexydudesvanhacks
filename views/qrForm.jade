@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  .page-header
+    h3 Create your QR
+    h6 * Required Fields
+    img.centerImage(src=userPicture)
+  form.form-horizontal(id='qr-form', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label(class='col-sm-2 control-label', for='picture') Picture URL
+      .col-sm-8
+        input.form-control(name='picture', value=userPicture)
+    .form-group
+      label(class='col-sm-2 control-label', for='firstName') First Name *
+      .col-sm-8
+        input.form-control(type='text', name='firstName', id='firstName', placeholder='John', autofocus=true, required)
+    .form-group
+      label(class='col-sm-2 control-label', for='lastName') Last Name *
+      .col-sm-8
+        input.form-control(type='text', name='lastName', id='lastName', placeholder='Smith', required)
+    .form-group
+      label(class='col-sm-2 control-label', for='email') Email *
+      .col-sm-8
+        input.form-control(type='text', name='email', id='email', placeholder='johnsmith@example.com' required)
+    .form-group
+      label(class='col-sm-2 control-label', for='title') Title
+      .col-sm-8
+        input.form-control(type='text', name='title', id='title', placeholder='Student, Software Developer, Graphics Designer, etc.')
+    .form-group
+      label(class='col-sm-2 control-label', for='location') Location
+      .col-sm-8
+        input.form-control(type='text', name='location', id='location', placeholder='Vancouver, BC')
+    .form-group
+      label(class='col-sm-2 control-label', for='resumeUrl') Resume *
+      .col-sm-8
+        input.form-control(type='text', name='resume', id='resume', placeholder='https://www.dropbox.com/sh/123456' required)
+    .form-group
+      label(class='col-sm-2 control-label', for='linkedinId') Linked-In URL
+      .col-sm-8
+        input.form-control(type='url', name='linkedin', id='linkedin' placeholder="http://www.linkedin.com/in/yourname")
+    .form-group
+      label(class='col-sm-2 control-label', for='portfolio') Portfolio Links
+      .col-sm-8
+        input.form-control(type='text', name='portfolio[0]', id='portfolio[0]', placeholder='https://mywebsite.com')
+      .col-sm-8.col-sm-offset-2
+        input.form-control(type='text', name='portfolio[1]', id='portfolio[1]', placeholder='https://github.com/johnsmith/project1.git')
+      .col-sm-8.col-sm-offset-2
+        input.form-control(type='text', name='portfolio[2]', id='portfolio[2]', placeholder='https://github.com/johnsmith/project2.git')
+    .form-group
+      .col-sm-offset-2.col-sm-8
+        button.btn.btn-primary(type='submit')
+          i.fa.fa-qrcode
+          | Make My QR-Code

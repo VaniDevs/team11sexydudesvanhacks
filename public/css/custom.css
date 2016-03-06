@@ -104,7 +104,16 @@
     background-image: none
 }
 
+.highlighttext {
+  color: #683cb8;
+}
 
+.small-padding {
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
 
 /* Add Animation */
 @-webkit-keyframes animatetop {

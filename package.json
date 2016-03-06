@@ -1,9 +1,9 @@
 {
-  "name": "hackathon-starter",
+  "name": "vanhacks standalone",
   "version": "3.4.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "https://github.com/yves-chan/vanhacks_s.git"
   },
   "scripts": {
     "start": "node app.js",
@@ -12,10 +12,8 @@
   "dependencies": {
     "async": "^1.5.2",
     "bcrypt-nodejs": "^0.0.3",
-    "bitgo": "0.11.65",
     "body-parser": "^1.15.0",
     "cheerio": "^0.20.0",
-    "clockwork": "^0.1.0",
     "compression": "^1.6.1",
     "connect-assets": "^5.1.0",
     "connect-mongo": "^1.1.0",
@@ -27,9 +25,6 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.13.0",
     "express-validator": "^2.19.1",
-    "fbgraph": "^1.1.0",
-    "github-api": "^0.11.2",
-    "instagram-node": "^0.5.8",
     "jade": "^1.11.0",
     "lastfm": "^0.9.2",
     "lob": "^3.8.0",
@@ -44,23 +39,13 @@
     "node-sass-middleware": "^0.9.7",
     "nodemailer": "^2.1.0",
     "passport": "0.3.2",
-    "passport-facebook": "^2.1.0",
-    "passport-github": "^1.1.0",
-    "passport-google-oauth": "^1.0.0",
-    "passport-instagram": "^1.0.0",
-    "passport-linkedin-oauth2": "^1.4.0",
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
     "passport-openid": "^0.4.0",
-    "passport-twitter": "^1.0.4",
     "paypal-rest-sdk": "^1.6.8",
     "request": "^2.69.0",
     "stripe": "^4.4.0",
-    "tumblr.js": "^0.0.7",
-    "twilio": "^3.3.0-edge",
-    "twit": "^2.2.2",
     "validator": "^4.8.0",
-    "yui": "^3.18.1"
   },
   "devDependencies": {
     "blessed": "^0.1.81",

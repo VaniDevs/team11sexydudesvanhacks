@@ -8,13 +8,13 @@
         span.icon-bar
       a.navbar-brand(href='/')
         i.fa.fa-qrcode
-        | Just Choose Me
+        | Big Sisters of BC
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=(title == 'Home') ? 'active' : undefined)
           a(href='/') Home
         li(class=(title == 'Create Your QR') ? 'active' : undefined)
-          a(href='/qrForm') Create Your QR
+          a(href='/qrForm') Apply to be a Volunteer
         li(class=(title == 'Contact') ? 'active' : undefined)
           a(href='/contact') Contact
 
@@ -42,6 +42,6 @@
                   li.divider
               else
                   li(class=(title == 'qrScan') ? 'active' : undefined)
-                    a(href='/candidate/add') Scan a Candidate    
+                    a(href='/candidate/add') Scan a Candidate
               li
                 a(href='/logout') Logout

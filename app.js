@@ -34,6 +34,7 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var volunteerContoller = require('./controllers/volunteer');
+var itemController = require('./controllers/item');
 
 /**
  * API keys and Passport configuration.
@@ -132,6 +133,10 @@ app.get('/candidate/:email/listArray', userController.getCandidateArray);
 app.post('/candidate/add', userController.postCandidate);
 app.post('/candidate/:email/add', userController.postCandidateEmail);
 app.get('/candidate/delete/:candidate', userController.deleteCandidate);
+app.get('/item', itemController.index);
+app.get('/item/array', itemController.getItemArray);
+app.post('/item', itemController.postItem);
+app.delete('/item/:itemId', itemController.deleteItem);
 app.get('/volunteer', volunteerContoller.index);
 app.get('/test', function(req,res){
     res.send('ok');

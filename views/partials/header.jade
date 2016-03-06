@@ -13,8 +13,8 @@
       ul.nav.navbar-nav
         li(class=(title == 'Home') ? 'active' : undefined)
           a(href='/') Home
-        li(class=(title == 'Create Your QR') ? 'active' : undefined)
-          a(href='/volunteer') Apply to be a Volunteer
+        li(class=(title == 'Apply to be a Volunteer') ? 'active' : undefined)
+          a(href='/volunteer') Apply to be a Volunteer  
         li(class=(title == 'Contact') ? 'active' : undefined)
           a(href='/contact') Contact
 
@@ -38,10 +38,7 @@
                 a(href='/account') My Account
               li
                 a(href='/candidate/list') My Candidates
-              if is_mobile
-                  li.divider
-              else
-                  li(class=(title == 'qrScan') ? 'active' : undefined)
-                    a(href='/candidate/add') Scan a Candidate
+              li(class=(title == 'Create an item') ? 'active' : undefined)
+                a(href='/item') Post an item
               li
                 a(href='/logout') Logout

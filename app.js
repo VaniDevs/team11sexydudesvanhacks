@@ -2,7 +2,6 @@
  * Module dependencies.
  */
 var express = require('express');
-var device = require('express-device');
 var cookieParser = require('cookie-parser');
 var compress = require('compression');
 var session = require('express-session');
@@ -71,9 +70,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(device.capture());
-device.enableDeviceHelpers(app)
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'big-sisters-bc.herokuapp.com');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
 
+    next();
+}
+
+app.use(allowCrossDomain);
 app.use(expressValidator());
 app.use(methodOverride());
 app.use(cookieParser());

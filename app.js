@@ -9,7 +9,6 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var errorHandler = require('errorhandler');
-// var lusca = require('lusca');
 var methodOverride = require('method-override');
 var dotenv = require('dotenv');
 var MongoStore = require('connect-mongo/es5')(session);
@@ -24,10 +23,8 @@ var upload = multer({ dest: path.join(__dirname, 'uploads') });
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
- *
- * Default path: .env (You can remove the path argument entirely, after renaming `.env.example` to `.env`)
  */
-dotenv.load({ path: '.env.example' });
+dotenv.load({ path: '.env' });
 
 /**
  * Controllers (route handlers).
@@ -96,12 +93,8 @@ app.use(function(req, res, next) {
     next();
   } else {
     next();
-    // lusca.csrf()(req, res, next);
   }
 });
-// app.use(lusca.csrf(false));
-// app.use(lusca.xframe('SAMEORIGIN'));
-// app.use(lusca.xssProtection(true));
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
@@ -143,7 +136,7 @@ app.get('/test', function(req,res){
 });
 
 /**
- * API examples routes.
+ * API routes.
  */
 app.get('/api', apiController.getApi);
 app.get('/api/stripe', apiController.getStripe);

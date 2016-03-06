@@ -62,9 +62,13 @@ var checkboxClick_handler = function(item) {
     if (!noneChecked) {
         $(".price_th").css("visibility", "visible");
         $(".quantity_th").css("visibility", "visible");
+        $("#paypalBtn").prop('disabled', false);
+        $("#visaBtn").prop('disabled', false);
     } else {
         $(".price_th").css("visibility", "hidden");
         $(".quantity_th").css("visibility", "hidden");
+        $("#paypalBtn").prop('disabled', true);
+        $("#visaBtn").prop('disabled', true);
     }
 }
 
@@ -81,6 +85,10 @@ var totalAmtChange_handler = function() {
     });
     var rounded = Math.round(totalSoFar*100)/100;
     totalAmt(rounded.toString());
+}
+
+var deleteItem = function(itemId) {
+  $.delete("/item/" + itemId);
 }
 
 $(document).ready(function() {
@@ -110,7 +118,7 @@ $(document).ready(function() {
          $('.left').show();
       }
       if (curSlide.is( ':last-child' )) {
-         $('.right').hide();
+         $('.right.carousel-control').hide();
          return;
       } else {
          $('.right').show();

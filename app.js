@@ -143,11 +143,12 @@ app.get('/candidate/delete/:candidate', userController.deleteCandidate);
 app.get('/item', itemController.index);
 app.get('/item/array', itemController.getItemArray);
 app.post('/item', itemController.postItem);
-app.delete('/item/:itemId', itemController.deleteItem);
+app.get('/item/delete/:itemId', itemController.deleteItem);
 app.get('/volunteer', volunteerContoller.index);
 app.get('/forms/bigsister', formController.getBigSisterForm);
 app.get('/forms/studybuddy', formController.getStudybuddyForm);
 app.get('/forms/gogirl', formController.getGoGirlForm);
+app.get('/dashboard', itemController.getDashboard);
 app.get('/test', function(req,res){
     res.send('ok');
 });

@@ -48,17 +48,34 @@ exports.getItemArray = function (req, res, next) {
   });
 }
 
+/*
+* Get dashboard page
+*/
+exports.getDashboard = function (req, res, next) {
+  Item.find({}, function(err, itemArray) {
+    if (err) {
+      return next(err);
+    }
+    res.render('account/list', {
+        title: 'Dashboard',
+        items: itemArray
+    });
+  });
+}
+
+
 /**
-* Get /item/array
-* Getting the list of items
+* Get delete
+* Getting the delete
 */
 exports.deleteItem = function (req, res, next) {
-  console.log(req.params.itemId);
+  var itemId = req.params.itemId;
 
   Item.remove({_id:req.params.itemId}, function(err) {
     if (err) {
       return next(err);
     }
-    res.status(204).end();
+    req.flash('success', { msg: 'Removed Item from List' })
+    res.redirect('/dashboard');
   });
 }

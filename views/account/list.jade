@@ -6,30 +6,19 @@ block content
   - }
 
   .page-header
-    h3 Candidates List
+    h3 Item List
   table#example.table.table-striped.tablesorter
     thead
       tr
         th Date
-        th Photo
-        th First name
-        th Last name
         th Title
-        th Location
-        th Resume
-        th Portfolio links
+        th Description
+        th Price
     tbody
-      each candidate in candidates
+      each item in items
         tr
-          td #{formatDate(candidate.dateScanned)}
-          td: img.headshot-img(src=candidate.picture)
-          td #{candidate.firstName}
-          td #{candidate.lastName}
-          td #{candidate.title}
-          td #{candidate.location}
-          td: a(href=candidate.resume) Resume link
-          td
-            each portfolioLink, i in candidate.portfolio
-              if portfolioLink
-                p: a(href=portfolioLink) Portfolio link #{i}
-          td: button(class='btn-danger ', onclick="window.location.href='/candidate/delete/#{candidate._id}'") x
+          td #{formatDate(item.createdAt)}
+          td #{item.title}
+          td #{item.description}
+          td #{item.price}
+          td: button(class='btn-danger ', onclick="window.location.href='/item/delete/#{item._id}'") x

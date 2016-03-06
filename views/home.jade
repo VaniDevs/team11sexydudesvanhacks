@@ -28,7 +28,7 @@ block content
               span#modalCloseButton.close x
               h2 How can I help?
               p
-                | Big Sisters is currently looking for donations for the following items. These donations can come as physical
+                | Big Sisters is currently looking for donations for the following items. You can greatly help the cause by donating any of the following items
             .modal-body
               table#newsFeedItemsTable.table.table-hover.borderless
                 thead
@@ -44,7 +44,7 @@ block content
                       span(data-bind='text: title')
                     td(style='width: 15em; word-wrap: normal', data-bind='text: description')
                     td
-                      span(data-bind="attr: {'id': 'price_'+ $index()}, text: '$' + Math.round(price*100)/100")
+                      span(data-bind="attr: {'id': 'price_'+ $index()}, text: '$' + price")
                     td
                       input(type='number', style='width: 4em; text-align: center', data-bind="attr: {'id': 'number_'+ $index()}", oninput='totalAmtChange_handler()', value='1')
             .modal-footer

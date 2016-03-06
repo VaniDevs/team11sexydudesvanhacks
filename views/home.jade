@@ -48,7 +48,7 @@ block content
                     td
                       input(type='number', style='width: 4em; text-align: center', data-bind="attr: {'id': 'number_'+ $index()}", oninput='totalAmtChange_handler()', value='1')
                     td  
-                      input(type='button', data-bind="attr: {'id': 'amazonSearchButton_' + $index()}", value: 'or Donate in kind')
+                      input(type='button', data-bind="attr: {'id': 'amazonSearchButton_' + $index()}", value='or Donate in kind' class='btn btn-default')
             .modal-footer
               h3
                 form.form-horizontal(role='form', method='POST')

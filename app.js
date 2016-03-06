@@ -132,7 +132,7 @@ app.get('/candidate/:email/listArray', userController.getCandidateArray);
 app.post('/candidate/add', userController.postCandidate);
 app.post('/candidate/:email/add', userController.postCandidateEmail);
 app.get('/candidate/delete/:candidate', userController.deleteCandidate);
-app.get('/volunteer', volunteerContoller.getVolunteerPage);
+app.get('/volunteer', volunteerContoller.index);
 app.get('/test', function(req,res){
     res.send('ok');
 });

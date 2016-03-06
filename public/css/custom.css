@@ -115,6 +115,11 @@
   padding-bottom: 2em;
 }
 
+.navbar {
+  background-color: #683cb8;
+  color: #ffffff;
+}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top: -300px; opacity: 0}

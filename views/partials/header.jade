@@ -1,4 +1,4 @@
-.navbar.navbar-default.navbar-fixed-top
+.navbar.navbar-default.navbar-fixed-top.highlighttext
   .container
     .navbar-header
       button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -15,6 +15,8 @@
           a(href='/') Home
         li(class=(title == 'Apply to be a Volunteer') ? 'active' : undefined)
           a(href='/volunteer') Apply to be a Volunteer  
+        li(class=(title == 'About Us') ? 'active' : undefined)
+          a(href='/about') About Us
         li(class=(title == 'Contact') ? 'active' : undefined)
           a(href='/contact') Contact
 

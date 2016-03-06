@@ -33,6 +33,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var volunteerContoller = require('./controllers/volunteer');
 
 /**
  * API keys and Passport configuration.
@@ -131,6 +132,7 @@ app.get('/candidate/:email/listArray', userController.getCandidateArray);
 app.post('/candidate/add', userController.postCandidate);
 app.post('/candidate/:email/add', userController.postCandidateEmail);
 app.get('/candidate/delete/:candidate', userController.deleteCandidate);
+app.get('/volunteer', volunteerContoller.getVolunteerPage);
 app.get('/test', function(req,res){
     res.send('ok');
 });

@@ -14,7 +14,7 @@ exports.index = function(req, res) {
 * POST /item
 * Making an item
 */
-exports.postItem = function (req, res) {
+exports.postItem = function (req, res, next) {
   var item = new Item({
     title: req.body.title,
     description: req.body.description,
@@ -25,7 +25,7 @@ exports.postItem = function (req, res) {
 
   item.save(function(err) {
     if (err) {
-      next(err);
+      return "Something went wrong";
     }
     res.status(204).end();
   });
@@ -35,10 +35,10 @@ exports.postItem = function (req, res) {
 * Get /item/array
 * Getting the list of items
 */
-exports.getItemArray = function (req, res) {
+exports.getItemArray = function (req, res, next) {
   Item.find({}, function(err, itemArray) {
     if (err) {
-      next(err);
+      return next(err);
     }
     res.status(200).send(itemArray);
   });
@@ -48,7 +48,7 @@ exports.getItemArray = function (req, res) {
 * Get /item/array
 * Getting the list of items
 */
-exports.deleteItem = function (req, res) {
+exports.deleteItem = function (req, res, next) {
   console.log(req.params.itemId);
 
   Item.remove({_id:req.params.itemId}, function(err) {

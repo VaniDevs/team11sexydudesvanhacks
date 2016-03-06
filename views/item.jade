@@ -9,15 +9,15 @@ block content
     .form-group
       label(class='col-sm-2 control-label', for='title') Title
       .col-sm-8
-        input.form-control(name='title', value=title, required)
+        input.form-control(name='title', required)
     .form-group
       label(class='col-sm-2 control-label', for='description') Description
       .col-sm-8
         input.form-control(type='text', name='description', id='description', required)
     .form-group
-      label(class='col-sm-2 control-label', for='Price') Price
+      label(class='col-sm-2 control-label', for='Price') Price: $
       .col-sm-8
-        input.form-control(type='text', name='price', id='price', required)
+        input.form-control(type='number', name='price', id='price', min="0", max="9999", step="0.01",placeholder="in the format '00.00'" required)
     .form-group
       .col-sm-offset-2.col-sm-8
         button.btn.btn-primary(type='submit')

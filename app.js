@@ -34,6 +34,7 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var volunteerContoller = require('./controllers/volunteer');
 var itemController = require('./controllers/item');
+var formController = require('./controllers/form');
 
 /**
  * API keys and Passport configuration.
@@ -144,6 +145,9 @@ app.get('/item/array', itemController.getItemArray);
 app.post('/item', itemController.postItem);
 app.delete('/item/:itemId', itemController.deleteItem);
 app.get('/volunteer', volunteerContoller.index);
+app.get('/forms/bigsister', formController.getBigSisterForm);
+app.get('/forms/studybuddy', formController.getStudybuddyForm);
+app.get('/forms/gogirl', formController.getGoGirlForm);
 app.get('/test', function(req,res){
     res.send('ok');
 });

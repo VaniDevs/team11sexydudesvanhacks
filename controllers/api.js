@@ -2,7 +2,6 @@
  * Split into declaration and initialization for better startup performance.
  */
 var validator;
-var cheerio;
 var paypal;
 var request;
 
@@ -78,7 +77,7 @@ exports.getPayPal = function(req, res, next) {
       cancel_url: '/api/paypal/cancel'
     },
     transactions: [{
-      description: 'Hackathon Starter',
+      description: 'Big Sisters of BC',
       amount: {
         currency: 'USD',
         total: '1.99'

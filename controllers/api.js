@@ -59,6 +59,7 @@ exports.postStripe = function(req, res, next) {
  * PayPal SDK example.
  */
 exports.getPayPal = function(req, res, next) {
+  console.log(req.body);
   paypal = require('paypal-rest-sdk');
 
   paypal.configure({

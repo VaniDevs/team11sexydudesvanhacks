@@ -50,10 +50,10 @@ block content
             .modal-footer
               h3
                 form.form-horizontal(role='form', method='POST')
-                  | Total Donation: $
+                  | Total Donation $
                   span#totalAmount(data-bind='text: totalAmt')
-                  input#hiddenTotalAmount(type="hidden" data-bind='value: totalAmt')
-                  button#paypalBtn.btn.btn-primary(type="submit") PayPal
+                  input#totalAmt(type="hidden" name='totalAmt' data-bind='value: totalAmt')
+                  button#paypalBtn.btn.btn-primary(type="submit" formmethod="post") PayPal
                   button#visaBtn.btn.btn-success(type="submit") Visa
     a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
       span.glyphicon.glyphicon-chevron-right(aria-hidden='true')

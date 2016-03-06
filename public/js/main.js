@@ -5,7 +5,7 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-var paypalBtn = document.getElementById('paypalBtn');
+// var paypalBtn = document.getElementById('paypalBtn');
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
@@ -23,10 +23,9 @@ window.onclick = function(event) {
     }
 }
 
-paypalBtn.onclick = function() {
-
-    $.post("/api/paypal");
-}
+// paypalBtn.onclick = function() {
+//     $.post("/api/paypal");
+// }
 
 var dataItems = ko.observableArray();
 
